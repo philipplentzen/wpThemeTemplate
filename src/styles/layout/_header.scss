@@ -1,0 +1,15 @@
+@use "src/styles/abstracts/constants" as *;
+@use "src/styles/abstracts/mixins" as *;
+
+header {
+  position: absolute;
+  width: 100%;
+  height: $header-height;
+  z-index: 999;
+  text-align: right;
+  padding: #{$spacing} calc(2 * #{$spacing});
+
+  @include small {
+    @include p-default;
+  }
+}

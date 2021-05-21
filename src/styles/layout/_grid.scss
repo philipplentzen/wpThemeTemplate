@@ -1,0 +1,59 @@
+@use "src/styles/abstracts/constants" as *;
+@use "src/styles/abstracts/mixins" as *;
+
+.content {
+  width: 100%;
+  max-width: $max-width;
+  @include clearfix;
+  @include mh-center;
+  @include ph-default;
+
+  @media (min-width: $breakpoint-md) {
+    width: 80%;
+  }
+}
+
+.row {
+  margin-left: -$spacing;
+  margin-right: -$spacing;
+  @include clearfix;
+}
+
+.column {
+  float: left;
+  position: relative;
+  @include ph-default;
+
+  @for $i from 1 through $grid-size {
+  &[sm='#{$i}'] {
+      width: calc(100% / #{$grid-size} * #{$i});
+    }
+
+    &[offset='#{$i}'] {
+      margin-left: calc(100% / #{$grid-size} * #{$i});
+    }
+
+    @include medium {
+      &[md='#{$i}'] {
+        width: calc(100% / #{$grid-size} * #{$i});
+      }
+
+      &[offset-md='#{$i}'] {
+        margin-left: calc(100% / #{$grid-size} * #{$i});
+      }
+    }
+
+    @include large {
+      &[lg='#{$i}'] {
+        width: calc(100% / #{$grid-size} * #{$i});
+      }
+
+      &[offset-lg='#{$i}'] {
+        margin-left: calc(100% / #{$grid-size} * #{$i});
+      }
+    }
+  }
+}
+
+
+

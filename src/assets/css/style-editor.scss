@@ -1,0 +1,6 @@
+@use "src/styles/abstracts/constants" as *;
+
+body {
+  background-color: $background;
+  color: $text;
+}

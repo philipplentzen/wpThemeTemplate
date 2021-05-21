@@ -1,0 +1,181 @@
+@use "constants" as *;
+
+@mixin clearfix {
+  &:before {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+/**
+  Breakpoints
+ */
+
+@mixin small {
+  @media (max-width: $breakpoint-md) {
+    @content;
+  }
+}
+
+@mixin medium {
+  @media (min-width: $breakpoint-md) {
+    @content;
+  }
+}
+
+@mixin large {
+  @media (min-width: $breakpoint-lg) {
+    @content;
+  }
+}
+
+/**
+  Margin
+ */
+
+@mixin m-0 {
+  margin: 0;
+}
+
+@mixin m-default {
+  margin: $spacing;
+}
+
+@mixin m-only-bottom {
+  margin: 0 0 $spacing;
+}
+
+@mixin mh-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin mv-center {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+/**
+  Padding
+ */
+
+@mixin p-0 {
+  padding: 0;
+}
+
+@mixin p-default {
+  padding: $spacing;
+}
+
+@mixin ph-default {
+  padding-left: $spacing;
+  padding-right: $spacing;
+}
+
+/**
+  List
+ */
+
+@mixin reset-list {
+  position: relative;
+  list-style: none;
+  @include m-0;
+  @include p-0;
+}
+
+/**
+  Transition
+ */
+
+@mixin transition {
+  transition: 0.3s all ease-in-out;
+}
+
+@mixin no-transition {
+  transition: none;
+}
+
+/**
+  Font
+ */
+
+@mixin font {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+  line-height: 0.8;
+  color: $text;
+}
+
+@mixin h1 {
+  font-weight: 900;
+  font-size: 3.7em;
+
+  &:not(:only-child) {
+    @include m-only-bottom;
+  }
+}
+
+@mixin h2 {
+  font-weight: 700;
+  font-size: 3.1em;
+
+  &:not(:only-child) {
+    @include m-only-bottom;
+  }
+}
+
+@mixin h3 {
+  font-weight: 700;
+  font-size: 2.5em;
+
+  &:not(:only-child) {
+    @include m-only-bottom;
+  }
+}
+
+@mixin h4 {
+  font-weight: 700;
+  font-size: 2em;
+
+  &:not(:only-child) {
+    @include m-only-bottom;
+  }
+}
+
+@mixin h5 {
+  font-weight: 700;
+  font-size: 1.6em;
+
+  &:not(:only-child) {
+    @include m-only-bottom;
+  }
+}
+
+@mixin h6 {
+  font-weight: 700;
+  font-size: 1.3em;
+
+  &:not(:only-child) {
+    @include m-only-bottom;
+  }
+}
+
+@mixin p {
+  font-size: 1em;
+
+  &:not(:only-child) {
+    @include m-only-bottom;
+  }
+}
+
+@mixin a {
+  color: $theme;
+  text-decoration: none;
+  border-bottom: 1px solid $theme;
+}

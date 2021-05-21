@@ -1,0 +1,20 @@
+@use "mixins" as *;
+
+:root {
+  // Colors
+  --background: #000;
+  --text: #fff;
+  --theme: #00fb5c;
+
+  // Values
+  --spacing: .8rem;
+  --header-height: 112px;
+
+  @include medium {
+    --spacing: 1rem;
+  }
+
+  @include large {
+    --spacing: 1.5rem;
+  }
+}

@@ -1,0 +1,18 @@
+// Sizes
+$spacing: var(--spacing);
+$max-width: 64rem;
+$header-height: var(--header-height);
+$thickness: 8px;
+
+// Grid
+$grid-size: 12;
+
+// Breakpoints default < 30em < md < 60em < lg
+$sizes: md, lg;
+$breakpoint-md: 30em;
+$breakpoint-lg: 60em;
+
+// Colors
+$background: var(--background);
+$text: var(--text);
+$theme: var(--theme);

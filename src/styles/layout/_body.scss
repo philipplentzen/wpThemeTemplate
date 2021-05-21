@@ -1,0 +1,13 @@
+@use "src/styles/abstracts/mixins" as *;
+@use "src/styles/abstracts/constants" as *;
+
+// Body
+body {
+  background: $background;
+  @include font;
+  overflow-x: hidden;
+
+  @include medium {
+    overflow-y: auto!important;
+  }
+}

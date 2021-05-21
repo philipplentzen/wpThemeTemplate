@@ -1,0 +1,62 @@
+@use "src/styles/abstracts/constants" as *;
+@use "src/styles/abstracts/mixins" as *;
+
+nav {
+  text-align: right;
+
+  &.header {
+    @include small {
+      position: fixed;
+      width: 0;
+      height: 100vh;
+      top: -100vh;
+      padding: 8rem $spacing;
+
+      background: $theme;
+    }
+  }
+
+  .menu-list {
+    display: inline-block;
+    @include reset-list;
+
+    @include small {
+      width: 100%;
+    }
+
+    .menu-item {
+      float: left;
+      opacity: 1;
+      @include p-default;
+
+      @include small {
+        width: 100%;
+        padding: 0 calc(3 * #{$spacing});
+        text-align: center;
+        opacity: 0;
+        margin-top: calc(-1 * #{$spacing});
+
+        a {
+          @include no-transition;
+          padding: calc(3 * #{$spacing}) 0;
+        }
+      }
+
+      &.current-menu-item {
+
+      }
+
+      a {
+        @include h6;
+        display: block;
+        color: $text;
+        border-bottom: none;
+        @include transition;
+
+        &:hover {
+          color: $background;
+        }
+      }
+    }
+  }
+}
