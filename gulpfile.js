@@ -10,8 +10,7 @@ const webpack = require('webpack-stream');
 
 const dir = {
     src: path.resolve("./src/"),
-    // build: path.resolve("./dist/")
-    build: path.resolve("/Users/philipplentzen/Local Sites/tachyons/app/public/wp-content/themes/test/")
+    build: path.resolve("./dist/")
 };
 let sync = false;
 
