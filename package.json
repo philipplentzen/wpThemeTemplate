@@ -10,13 +10,13 @@
   "author": "philipplentzen",
   "license": "ISC",
   "devDependencies": {
-    "@types/jquery": "^3.5.5",
-    "@types/slick-carousel": "^1.6.34",
-    "@wordpress/dependency-extraction-webpack-plugin": "^3.1.1",
-    "autoprefixer": "^10.2.5",
-    "browser-sync": "^2.26.14",
+    "@types/jquery": "^3.5.6",
+    "@types/slick-carousel": "^1.6.37",
+    "@wordpress/dependency-extraction-webpack-plugin": "^3.2.1",
+    "autoprefixer": "^10.3.1",
+    "browser-sync": "^2.27.5",
     "css-mqpacker": "^7.0.0",
-    "cssnano": "^4.1.10",
+    "cssnano": "^4.1.11",
     "gulp": "^4.0.2",
     "gulp-concat": "^2.6.1",
     "gulp-dart-sass": "^1.0.2",
@@ -27,11 +27,11 @@
     "gulp-strip-debug": "^3.0.0",
     "gulp-uglify": "^3.0.2",
     "gulp-util": "^3.0.8",
-    "ts-loader": "^8.1.0",
+    "ts-loader": "^8.3.0",
     "webpack-stream": "^6.1.2"
   },
   "dependencies": {
-    "gsap": "^3.6.1",
+    "gsap": "^3.7.1",
     "slick-carousel": "^1.8.1"
   }
 }
