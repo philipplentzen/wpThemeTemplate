@@ -1,7 +1,7 @@
 @use "src/styles/abstracts/constants" as *;
 @use "src/styles/abstracts/mixins" as *;
 
-button {
+button, .button {
   &#full-page-navigation {
     position: relative;
     width: 2rem;

@@ -3,6 +3,7 @@
 
 // Body
 body {
+  color: $text;
   background: $background;
   @include font;
   overflow-x: hidden;

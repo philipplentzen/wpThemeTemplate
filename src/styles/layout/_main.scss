@@ -1,5 +1,6 @@
 @use "src/styles/abstracts/constants" as *;
 
 main {
+  min-height: 100vh;
   padding-top: $header-height;
 }

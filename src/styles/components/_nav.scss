@@ -51,7 +51,7 @@ nav {
         display: block;
         color: $text;
         border-bottom: none;
-        @include transition;
+        @include transition(color);
 
         &:hover {
           color: $background;

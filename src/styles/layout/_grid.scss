@@ -2,6 +2,7 @@
 @use "src/styles/abstracts/mixins" as *;
 
 .content {
+  position: relative;
   width: 100%;
   max-width: $max-width;
   @include clearfix;
@@ -14,9 +15,40 @@
 }
 
 .row {
-  margin-left: -$spacing;
-  margin-right: -$spacing;
+  margin-left: calc(-1 * #{$spacing});
+  margin-right: calc(-1 * #{$spacing});
   @include clearfix;
+}
+
+.grid {
+  display: grid;
+  margin-left: calc(-1 * #{$spacing});
+  margin-right: calc(-1 * #{$spacing});
+  grid-row-gap: calc(2 * #{$spacing});;
+
+  @include small {
+    @include m-0;
+  }
+
+  @for $i from 1 through $grid-size {
+    $repeat: $grid-size / $i;
+
+    &[sm='#{$i}'] {
+      grid-template-columns: repeat(#{$repeat}, 1fr);
+    }
+
+    @include medium {
+      &[md='#{$i}'] {
+        grid-template-columns: repeat(#{$repeat}, 1fr);
+      }
+    }
+
+    @include large {
+      &[lg='#{$i}'] {
+        grid-template-columns: repeat(#{$repeat}, 1fr);
+      }
+    }
+  }
 }
 
 .column {

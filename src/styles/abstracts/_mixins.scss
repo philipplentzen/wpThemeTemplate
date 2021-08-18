@@ -78,6 +78,11 @@
   padding-right: $spacing;
 }
 
+@mixin pv-default {
+  padding-top: $spacing;
+  padding-bottom: $spacing;
+}
+
 /**
   List
  */
@@ -93,8 +98,14 @@
   Transition
  */
 
-@mixin transition {
-  transition: 0.3s all ease-in-out;
+@mixin transition($properties...) {
+  $transition: ();
+  @each $property in $properties {
+    $transition: append(
+      $transition, ($property 0.3s ease-in-out), $separator: comma
+    );
+  }
+  transition: $transition;
 }
 
 @mixin no-transition {
@@ -112,9 +123,20 @@
   color: $text;
 }
 
+@mixin fontProps {
+  &.center {
+    text-align: center;
+  }
+
+  &.accent {
+    color: $theme;
+  }
+}
+
 @mixin h1 {
   font-weight: 900;
   font-size: 3.7em;
+  @include fontProps;
 
   &:not(:only-child) {
     @include m-only-bottom;
@@ -124,6 +146,7 @@
 @mixin h2 {
   font-weight: 700;
   font-size: 3.1em;
+  @include fontProps;
 
   &:not(:only-child) {
     @include m-only-bottom;
@@ -133,6 +156,7 @@
 @mixin h3 {
   font-weight: 700;
   font-size: 2.5em;
+  @include fontProps;
 
   &:not(:only-child) {
     @include m-only-bottom;
@@ -142,6 +166,7 @@
 @mixin h4 {
   font-weight: 700;
   font-size: 2em;
+  @include fontProps;
 
   &:not(:only-child) {
     @include m-only-bottom;
@@ -151,6 +176,7 @@
 @mixin h5 {
   font-weight: 700;
   font-size: 1.6em;
+  @include fontProps;
 
   &:not(:only-child) {
     @include m-only-bottom;
@@ -160,6 +186,7 @@
 @mixin h6 {
   font-weight: 700;
   font-size: 1.3em;
+  @include fontProps;
 
   &:not(:only-child) {
     @include m-only-bottom;
@@ -168,6 +195,9 @@
 
 @mixin p {
   font-size: 1em;
+  font-weight: 200;
+  line-height: 1.4em;
+  @include fontProps;
 
   &:not(:only-child) {
     @include m-only-bottom;
@@ -178,4 +208,5 @@
   color: $theme;
   text-decoration: none;
   border-bottom: 1px solid $theme;
+  @include fontProps;
 }
